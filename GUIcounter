@@ -33,7 +33,7 @@ public class GUIcounter {
         minus.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 int counter = Integer.parseInt(label.getText()); // string -> int
-                counter--;
+                if(counter>0)counter--;  // it doesn't go below 0
                 label.setText(String.valueOf(counter)); // print the new value of the label
             }
         });
