@@ -25,7 +25,11 @@ public class bookstore {
             String purchasedProduct = scanner.nextLine();
             purchasedBook=purchasedProduct;
             if(isNumeric(purchasedBook)){
-                purchase(titles, price, quantity, purchasedBook, userMoney);
+                if(Integer.parseInt(purchasedBook)<=(titles.length) )purchase(titles, price, quantity, purchasedBook, userMoney);
+                else{
+                    System.out.println("Invalid input. Enter a code (1-5), 'search', or 'exit'");
+                    System.out.println();
+                }
             }
             else {
                 if(purchasedProduct.equalsIgnoreCase("Search")){
@@ -36,7 +40,10 @@ public class bookstore {
                 else if(purchasedProduct.equalsIgnoreCase("exit")) {
                     System.out.println("Thank you for visiting the online bookstore. Your balance: $" + userMoney);
                 }
-                else System.out.println("Invalid Input");
+                else{
+                    System.out.println("Invalid input. Enter a code (1-5), 'search', or 'exit'");
+                    System.out.println();
+                }
             }
 
         }while(!purchasedBook.equalsIgnoreCase("exit"));
@@ -68,6 +75,7 @@ public class bookstore {
             }
         }
         if(num==0) System.out.println("No books match your search");
+        System.out.println();
     }
 
     public static void purchase(String[] titles, double[] price,  int[] quantity, String pp, double userMoney){
@@ -85,6 +93,7 @@ public class bookstore {
         }
         else if(enteredMoney<price[p-1]){
             System.out.printf("Not enough money! You need to insert additional $" + "%.2f",(price[p-1]-enteredMoney));
+            System.out.println();
         }
         else{
             double change = (enteredMoney - price[p-1]);
@@ -92,11 +101,9 @@ public class bookstore {
             System.out.printf("Change: $" + "%.2f", change);
             System.out.println();
             System.out.printf("Balance: $" + "%.2f", userMoney);
-
+            System.out.println();
             quantity[p-1]--;
         }
         System.out.println();
-            System.out.println();
-
     }
 }
