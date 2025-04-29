@@ -14,6 +14,19 @@ public class Polymorphism {
             System.out.println();
         }
         // TODO: Before you run, write down what you think the output will be!
+        
+            /*
+            Morning on the farm!
+            Henrietta the chicken says: Cluck cluck!
+            Henrietta produces: Eggs
+            
+            Bessie the cow says: Moo!
+            Bessie produces: Milk
+            
+            Kamen the sheep says: Baa!
+            Kamen produces: Nothing (maybe wool!)
+            */
+        
     }
 }
 
